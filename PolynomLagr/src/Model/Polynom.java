@@ -67,26 +67,31 @@ public class Polynom {
     }
 
     @Override
-   public String toString() {
+    public String toString() {
         String result = "";
         for (int i = coef.length - 1; i >= 0; i--) {
             if (i == coef.length - 1) {
-                result += coef[i] + "x^" + i;
+                result += coef[i] + "x^" + i + " ";
             } else {
-                if (i > 1) {
-                    if (coef[i] == 0) {
-                        continue;
-                    } else {
-                        if (coef[i] > 0) {
-                            result += " + " + coef[i] + "x^" + i;
-                        } else
-                            result += coef[i] + "x^" + i;
-                    }
+                if (coef[i] == 0) {
+                    continue;
                 } else {
-                    if (i == 1) {
-                        result += coef[i] + "x";
-                    } else
-                        result += coef[i];
+                    if (coef[i] > 0 & i > 1) {
+                        result += " + " + coef[i] + "x^" + i + " ";
+                    } else {
+                        if (i == 1 & coef[i] > 0) {
+                            result += " + " + coef[i] + "x ";
+                        } else {
+                            if (i == 1 & coef[i] < 0) {
+                                result += coef[i] + "x ";
+                            } else
+                                if(coef[i] > 0) {
+                                    result += " + " + coef[i];
+                                }
+                                else
+                                    result += coef[i];
+                        }
+                    }
                 }
             }
         }
