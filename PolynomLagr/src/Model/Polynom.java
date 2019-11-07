@@ -79,6 +79,7 @@ public class Polynom {
                     if (coef[i] > 0) {
                         result += " + " + coef[i] + "x^" + i;
                     }
+                    result += coef[i] + "x^" + i;
                 }
             }
         }
